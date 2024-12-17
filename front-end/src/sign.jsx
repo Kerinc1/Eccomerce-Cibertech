@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 // Componente para el botón de cerrar sesión
 const SignOutButton = ({ cerrarSesion }) => (
@@ -11,6 +13,8 @@ const SignOutButton = ({ cerrarSesion }) => (
 
 const SignOut = () => {
   const [usuario, setUsuario] = useState(null);
+  const navigate = useNavigate(); // Obtener la función navigate
+
 
   // Cargar el usuario desde el localStorage
   useEffect(() => {
@@ -26,6 +30,11 @@ const SignOut = () => {
     setUsuario(null); // Actualiza el estado a nulo
   };
 
+  const handleGoToInventory = () => {
+    const userId = JSON.parse(localStorage.getItem('user'))._id;
+    navigate(`/items/${userId}`);  // Navegamos al inventario del usuario
+  };
+
   return (
     <div>
       <header className="header-container">
@@ -34,12 +43,13 @@ const SignOut = () => {
 
           {/* Mostrar el botón de Inventario solo si hay un usuario y si es vendedor */}
           {usuario && usuario.accountType === 'vendedor' && (
-              <a href={`/items/${usuario._id}`} className="button-inventory" id="container-in-header">
-              <button className="inventory">
-                <p>Inventario</p>
+              <button className="button-inventory" id="container-in-header" onClick={handleGoToInventory}>
+              
+                <p className="inventory">Inventario</p>
               </button>
-            </a>
-          )}
+              
+              )}
+
 
           {/* Mostrar el botón de Cerrar Sesión solo si hay un usuario */}
           {usuario && (
