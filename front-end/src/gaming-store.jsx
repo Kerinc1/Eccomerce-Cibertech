@@ -85,7 +85,7 @@ export default function ComponentGamerStore() {
       <header className="header-container">
         <nav id="nav-container">
           <a href='/'>
-            <img src="../public/images/CIBERTECH01.png" alt="Cibertech" className="image-logo" />
+            <img src="./assets/images/CIBERTECH01.png" alt="Cibertech" className="image-logo" />
           </a>
           <div className='nav-middle'>
             <div className="div-products-container" id="container-in-header">
