@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5008/api/rating';
+const BASE_URL = 'https://cibertech.onrender.com/api/rating';
 
 // Obtener el promedio de calificación
 export const fetchAverageRating = async (productId) => {

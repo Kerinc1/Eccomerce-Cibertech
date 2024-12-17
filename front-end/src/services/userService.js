@@ -1,7 +1,7 @@
 // services/userService.js
 export const getUser = async (userId) => {
     try {
-        const response = await fetch(`http://localhost:5008/users/${userId}`, {
+        const response = await fetch(`https://cibertech.onrender.com/users/${userId}`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });

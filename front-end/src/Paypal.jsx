@@ -11,7 +11,7 @@ const PayPalButton = ({ price }) => {
 
       window.paypal.Buttons({
         createOrder: async () => {
-          const response = await fetch('/create-order', {
+          const response = await fetch('https://cibertech.onrender.com/create-order', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ const PayPalButton = ({ price }) => {
           return data.id; // Devuelve el ID de la orden
         },
         onApprove: async (data) => {
-          const response = await fetch(`/capture-order/${data.orderID}`, {
+          const response = await fetch(`https://cibertech.onrender.com/capture-order/${data.orderID}`, {
             method: 'POST',
           });
 

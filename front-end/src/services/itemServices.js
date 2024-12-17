@@ -1,7 +1,7 @@
 import axios from 'axios';
-const API_URL = "http://localhost:5008/items";
-const API_URL2 = "http://localhost:5008/auth";
-const API_URL3 = "http://localhost:5008/products";
+const API_URL = "https://cibertech.onrender.com/items";
+const API_URL2 = "https://cibertech.onrender.com/auth";
+const API_URL3 = "https://cibertech.onrender.com/products";
 
 
 export const registerUser = async (form) => {

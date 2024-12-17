@@ -20,7 +20,7 @@ const Comments = ({ productId }) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get(`http://localhost:5008/api/comments/${productId}`);
+        const response = await axios.get(`https://cibertech.onrender.com/api/comments/${productId}`);
         if (Array.isArray(response.data)) {
           setComments(response.data);
         } else {
@@ -47,7 +47,7 @@ const Comments = ({ productId }) => {
     }
     try {
       const newComment = { productId, name: user.name, comment };
-      const response = await axios.post('http://localhost:5008/api/comments', newComment);
+      const response = await axios.post('https://cibertech.onrender.com/api/comments', newComment);
       setComments([...comments, response.data]);
       setComment('');
     } catch (error) {
@@ -77,7 +77,7 @@ const Comments = ({ productId }) => {
         return;
       }
       const updatedComment = { comment };
-      const response = await axios.put(`http://localhost:5008/api/comments/${editingComment._id}`, updatedComment);
+      const response = await axios.put(`https://cibertech.onrender.com/api/comments/${editingComment._id}`, updatedComment);
       const updatedComments = comments.map(c => c._id === editingComment._id ? response.data : c);
       setComments(updatedComments);
       setEditingComment(null);
@@ -89,7 +89,7 @@ const Comments = ({ productId }) => {
 
   const handleDelete = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5008/api/comments/${commentId}`);
+      await axios.delete(`https://cibertech.onrender.com/api/comments/${commentId}`);
       setComments(comments.filter(c => c._id !== commentId));
     } catch (error) {
       console.error('Error al eliminar el comentario', error);

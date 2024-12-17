@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './PaymentGateway.css';
 import { FaTrashAlt } from 'react-icons/fa'; // Icono de eliminar
-import PayPalButton from './paypal';
+import PayPalButton from './Paypal';
 
 const PaymentGateway = () => {
   const location = useLocation();
