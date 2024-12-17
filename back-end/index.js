@@ -193,7 +193,7 @@ app.put("/items/:id", upload.single('image'), async (req, res) => {
         let updatedData = { nameItem, descriptionItem, priceItem, quantityItem };
 
         if (req.file) {
-            updatedData.image = `http://localhost:5008/upload/${req.file.originalname}`;  // Actualizar la URL de la imagen
+            updatedData.image = `https://${process.env.AWS_S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${req.file.key}`;  // Actualizar la URL de la imagen
         }
 
         const updatedItem = await Item.findByIdAndUpdate(req.params.id, updatedData, { new: true });

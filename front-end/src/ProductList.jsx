@@ -39,33 +39,35 @@ const ProductList = () => {
         }
     };
 
-    const fetchItems = async (userId) => {
+    const fetchItems = async () => {
+        const storedUser = JSON.parse(localStorage.getItem('user'));
         try {
-            const data = await getItems(userId);
+            const data = await getItems(storedUser._id);
             setItems(data);
         } catch (error) {
             console.error('Error al obtener productos:', error);
         }
     };
+    
 
     const handleAddItem = async (e) => {
         e.preventDefault();
-
+    
         if (!image) {
             alert('Por favor selecciona una imagen.');
             return;
         }
-
+    
         const formData = new FormData();
         formData.append('nameItem', form.nameItem);
         formData.append('descriptionItem', form.descriptionItem);
         formData.append('priceItem', form.priceItem);
         formData.append('quantityItem', form.quantityItem);
         formData.append('image', image);
-
+    
         try {
             await addItem(formData);
-            fetchItems();
+            await fetchItems(); // Recargar productos
             alert('Producto agregado con éxito.');
             setForm({ nameItem: '', descriptionItem: '', priceItem: '', quantityItem: '' });
             setImage(null);
@@ -74,10 +76,10 @@ const ProductList = () => {
             alert('Hubo un error al agregar el producto.');
         }
     };
-
+    
     const handleUpdate = async (e) => {
         e.preventDefault();
-
+    
         const formData = new FormData();
         formData.append('nameItem', form.nameItem);
         formData.append('descriptionItem', form.descriptionItem);
@@ -86,10 +88,10 @@ const ProductList = () => {
         if (image) {
             formData.append('image', image);
         }
-
+    
         try {
             await updateItem(editingItemId, formData);
-            fetchItems();
+            await fetchItems(); // Recargar productos
             alert('Producto actualizado con éxito.');
             setEditingItemId(null);
             setForm({ nameItem: '', descriptionItem: '', priceItem: '', quantityItem: '' });
@@ -99,17 +101,22 @@ const ProductList = () => {
             alert('Hubo un error al actualizar el producto.');
         }
     };
-
+    
     const handleDelete = async (id) => {
+        const confirmDelete = window.confirm('¿Estás seguro de que deseas eliminar este producto?');
+        if (!confirmDelete) return;
+    
         try {
             await deleteItem(id);
-            setItems(items.filter(item => item._id !== id));
+            setItems((prevItems) => prevItems.filter((item) => item._id !== id));
             alert('Producto eliminado con éxito.');
         } catch (error) {
             console.error('Error al eliminar producto:', error);
-            alert('Hubo un error al eliminar el producto.');
+            
         }
     };
+    
+    
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
