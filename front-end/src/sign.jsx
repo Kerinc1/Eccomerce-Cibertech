@@ -43,9 +43,9 @@ const SignOut = () => {
 
           {/* Mostrar el botón de Inventario solo si hay un usuario y si es vendedor */}
           {usuario && usuario.accountType === 'vendedor' && (
-              <button className="button-inventory" id="container-in-header" onClick={handleGoToInventory}>
+              <button className="inventory" id="container-in-header" onClick={handleGoToInventory}>
               
-                <p className="inventory">Inventario</p>
+                <p >Inventario</p>
               </button>
               
               )}

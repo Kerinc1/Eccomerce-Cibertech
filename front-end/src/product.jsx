@@ -98,7 +98,7 @@ const ProductDetails = () => {
       <header className="header-container">
         <nav id="nav-container">
           <a href='/'>
-            <img src="/images/CIBERTECH.png" alt="Cibertech" className="image-logo" />
+            <img src="/images/CIBERTECH01.png" alt="Cibertech" className="image-logo" />
           </a>
           <div className='nav-middle'>
             <div className="div-products-container" id="container-in-header">
