@@ -40,7 +40,7 @@ const Login = ({ onLogin }) => {
             <nav  id="nav-container">
                 
                 <a href='/'>
-                   <img src="../public/images/CIBERTECH01.png"  alt="Cibertech"  className="image-logo" />
+                   <img src="/images/CIBERTECH01.png"  alt="Cibertech"  className="image-logo" />
                 </a>
 
                 <a href="/register" className="a-sign-up" id="container-in-header">
