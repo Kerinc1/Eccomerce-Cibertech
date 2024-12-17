@@ -36,7 +36,9 @@ const App = () => {
             <Routes>
                 <Route path="/register" element={<Register onRegister={handleRegister} />} />
                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
-                <Route path="/items" element={user ? <ProductList user={user} /> : <Navigate to="/login" replace />}/>
+                {/* Redirigir a la ruta de productos si el usuario está autenticado */}
+                <Route path="/items"  element={user ? <Navigate to={`/items?userId=${user._id}`} replace /> : <Navigate to="/login" replace />}/>
+                <Route path="/items" element={<ProductList user={user} />} />
                 <Route path="/payment" element={<PaymentGateway />} />
                 <Route path="/products/:id" element={<ProductDetails />} /> {/* Ruta corregida */}
 
