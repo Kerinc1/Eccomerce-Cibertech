@@ -1,0 +1,170 @@
+/* Contenedor principal de la pasarela de pagos */
+.payment-gateway {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Título principal */
+.payment-gateway h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de columnas */
+.payment-gateway .content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Columna izquierda: Resumen de compra y productos en el carrito */
+.payment-gateway .left-column {
+    width: 100%;
+    max-width: 45%;
+}
+
+/* Columna derecha: Información de envío y método de pago */
+.payment-gateway .right-column {
+    width: 100%;
+    max-width: 45%;
+}
+
+/* Cuadro de Información de Envío */
+.payment-gateway .user-info {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-right: 5%;
+}
+
+/* Estilo de la cuadrícula de la información de envío */
+.payment-gateway .user-info .form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+/* Estilo de los campos del formulario */
+.payment-gateway label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.payment-gateway input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+/* Contenedor de método de pago */
+.payment-gateway .payment-method {
+    margin-top: 20px;
+}
+
+/* Productos en el carrito */
+.payment-gateway .products {
+    margin-top: 20px;
+}
+
+/* Estilo de los productos */
+.payment-gateway .product {
+    margin-bottom: 10px;
+}
+
+.payment-gateway .product h3 {
+    font-size: 1.2rem;
+}
+
+.payment-gateway .product p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Resumen de compra (Recibo) */
+.payment-gateway .receipt {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Estilo del resumen de la compra */
+.payment-gateway .receipt p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .payment-gateway .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-gateway .left-column,
+    .payment-gateway .right-column {
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .payment-gateway .user-info .form-group {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Contenedor de botones de cantidad */
+.payment-gateway .quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Esto alinea los botones a los extremos */
+    width: 100%;
+}
+
+/* Botón de cantidad */
+.payment-gateway .btn-quantity {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.payment-gateway .btn-quantity:hover {
+    background-color: #bbb;
+}
+
+/* Número de cantidad */
+.payment-gateway .quantity-number {
+    font-size: 18px;
+}
+
+/* Botón eliminar (bote de basura) */
+.payment-gateway .btn-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #d9534f;
+    font-size: 20px;
+    margin-left: 10px; /* Espacio entre el botón de eliminar y la cantidad */
+}
+
+.payment-gateway .btn-remove:hover {
+    color: #c9302c;
+}

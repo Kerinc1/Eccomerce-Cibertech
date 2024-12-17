@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.712.0",
+    "@aws-sdk/lib-storage": "^3.712.0",
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "aws-sdk": "^2.1692.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.1",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1"
+  },
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jhon Acosta",
+  "license": "ISC",
+  "description": "Ecommerce Page"
+}
