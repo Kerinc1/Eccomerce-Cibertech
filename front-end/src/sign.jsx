@@ -34,7 +34,7 @@ const SignOut = () => {
 
           {/* Mostrar el botón de Inventario solo si hay un usuario y si es vendedor */}
           {usuario && usuario.accountType === 'vendedor' && (
-            <a href={`/items/?userId=${usuario._id}`} className="button-inventory" id="container-in-header">
+              <a href={`/items/${usuario._id}`} className="button-inventory" id="container-in-header">
               <button className="inventory">
                 <p>Inventario</p>
               </button>
