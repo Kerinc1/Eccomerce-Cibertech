@@ -40,7 +40,7 @@ const Carrito = ({ carrito, setCarrito }) => {
   return (
     <section className="bar">
       <button id="carrito" onClick={() => setMostrar(!mostrar)}>
-        <img src="./assets/images/cart-black2.png" id="carrito" alt="Carrito de Compras" />
+        <img src="/images/cart-black2.png" id="carrito" alt="Carrito de Compras" />
       </button>
 
       {mostrar && (
