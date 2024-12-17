@@ -21,21 +21,21 @@ const CustomCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/multimedia/PurpleandWhiteModernE-sportTournamentInstagramPost.jpg"
+          src="/images/banner3.jpg"
           alt="Bienvenido a Cibertech"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/multimedia/PurpleandBlueFuturisticGamingYoutubeBanner(1).gif"
+          src="/images/banner1.gif"
           alt="Cibertech la mejor opción"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/multimedia/BannerdeYouTubeGamerNeonVioleta.gif"
+          src="/images/banner2.gif"
           alt="Grandes descuentos esta temporada"
         />
       </Carousel.Item>
